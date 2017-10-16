@@ -1,0 +1,182 @@
+   12  man ls
+   13  ls -lt | head
+   14  date ; sleep 2; date
+   15  man sleep
+   16  date
+   17  man sleep
+   18  date; sleep 59; date
+   19  ls
+   20  cd ~
+   21  ls
+   22  md Practice
+   23  mkdir Practice
+   24  ls
+   25  cd Practice
+   26  grep Chr7 cuffdiff.txt > fav_chr_cuffdiff.txt
+   27  cd ..
+   28  ls
+   29  rm Practice
+   30  rmDir Practice
+   31  cd ..
+   32  ls
+   33  cd admin
+   34  ls
+   35  cd practice
+   36  ls
+   37  rm fav_chr_cuffdiff.txt 
+   38  cd ..
+   39  ls
+   40  rmDir Practice
+   41  l
+   42  ls
+   43  cd desktop
+   44  ls
+   45  cd files
+   46  ls
+   47  head fav_chr_cuffdiff.txt 
+   48  grep Chr7 cuffdiff.txt > fav_chr_cuffdiff.txt
+   49  head fav_chr_cuffdiff.txt
+   50  head cuffdiff.txt 
+   51  less fav_chr_cuffdiff.txt 
+   52  tail fav_chr_cuffdiff.txt 
+   53  grep Chr9 cuffdiff.txt >> fav_chr_cuffdiff.txt 
+   54  ls
+   55  tail fav_chr_cuffdiff.txt 
+   56  tail -f fav_chr_cuffdiff.txt 
+   57  less fav_chr_cuffdiff.txt 
+   58  ls
+   59  cat blabla.txt
+   60  cat blabla.txt 2 > errors.txt
+   61  ls
+   63  less errorst.txt
+   64  less errors.txt
+   65  less errors.txt
+   66  cat blabla.txt
+   67  cat blabla.txt 2> errors.txt
+   68  head errors.txt
+   69  less errors.txt
+   70  cat fav_chr_cuffdiff.txt blablabla.file
+   71  cat fav_chr_cuffdiff.txt  blabla.files > out.txt 2> err.txt
+   72  less err.txt
+   73  cat fav_chr_cuffdiff.txt  blabla.files
+   74  ls
+   75  less err.txt
+   76  cat fav_chr_cuffdiff.txt blabla.file > all_out_err.txt 2>&1
+   77  less all_out_err.txt 
+   78  tail all_out_err.txt 
+   79  cd ~
+   80  pwd
+   99  mkdir problemsets
+  100  cd ~
+  101  ls
+  102  mkdir problemsets
+  103  ls
+  104  cd problemsets
+  105  pwd
+  106  curl https://github.com/srobb1/pfb2017/blob/master/files/sequences.nt.fa
+  107  ls
+  108  man curl
+  109  curl https://github.com/srobb1/pfb2017/blob/master/files/sequences.nt.fa > problemsets
+  110  ls
+  111  cd problemsets
+  112  ls
+  113  cd ..
+  114  ls
+  115  cd problemsets
+  116  ls
+  117  cd problemsets
+  118  ls -l
+  119  ls
+  120  ls
+  121  cd problemsets
+  122  less problemsets
+  123  rmdir problemsets
+  124  rm problemsets
+  125  ls
+  126  cd ..
+  127  ls
+  128  ls
+  129  ls -F
+  130  cd problemsets
+  131  pwd
+  132  ls
+  133  pwd
+  134  curl https://github.com/srobb1/pfb2017/blob/master/files/sequences.nt.fa 
+  135  ls
+  136  pwd
+  137  curl https://raw.githubusercontent.com/srobb1/pfb2017/master/files/sequences.nt.fa
+  138  ls
+  139  pwd
+  140  curl https://raw.githubusercontent.com/srobb1/pfb2017/master/files/sequences.nt.fa > sequences.nt.fa
+  141  ls
+  142  ls
+  143  mv sequences.nt.fa cancer_genes.fasta
+  144  ls
+  164  rm cancer_genes.fasta 
+  168  wc sequences.nt.fa
+  169  head sequences.nt.fa 
+  170  tail sequences.nt.fa 
+  171  grep -v sequences.nt.fa 
+  172  grep NM sequences.nt.fa 
+  173  grep > sequences.nt.fa 
+  174  ls
+  175  grep ">" sequences.nt.fa 
+  176  cat sequences.nt.fa 
+  177  pwd
+  178  ls
+  179  head sequences.nt.fa 
+  180  grep ">" sequences.nt.fa 
+  181  mv sequences.nt.fa cancer_genes.fasta
+  182  ls
+  183  pwd
+  184  ls
+  185  cd ..
+  186  ls
+  187  cd problemsets
+  188  ls
+  189  pwd
+  190  ls
+  191  head cuffdiff.txt
+  192  man sort
+  193  sort -k 10
+  194  sort -k 10 cuffdiff.txt
+  195  head cuffdiff.txt
+  196  sort -k 10 cuffdiff.txt > sorted.cuffdiff.out
+  197  ls
+  198  head sorted.cuffdiff.out 
+  199  man sort
+  200  sort -k 10 [POS1, POS100] cuffdiff.txt > sorted.cuffdiff.out
+  201  man sort
+  202  sort -k 10 cuffdiff.txt > sorted.cuffdiff.out
+  203  man sort
+  204  head sorted.cuffdiff.out 
+  205  sort -k 10 -r cuffdiff.txt > sorted.cuffdiff.out
+  206  head sorted.cuffdiff.out 
+  207  man sort
+  208  man head
+  209  head -n 100 sorted.cuffdiff.out > top100.sorted.cuffdiff.out
+  210  wc top100.sorted.cuffdiff.out 
+  211  man sort
+  212  man sort 
+  213  man cut
+  214  man cut
+  215  cut -f 1 cuffdiff.txt
+  216  less cuffdiff.txt
+  217  column -t cuffdiff.txt | less -S
+  218  sort -k 10 cuffdiff.txt | column -t cuffdiff.txt | less -S
+  219  sort -k 10 cuffdiff.txt | column -t | less -S
+  220  man sort
+  221  sort -k 10 -g -r cuffdiff.txt > sorted.cuffdiff.out
+  222  column -t sorted.cuffdiff.out | less
+  223  column -t sorted.cuffdiff.out | less -S
+  224  head -n 100 sorted.cuffdiff.out > top100.sorted.cuffdiff.out
+  225  wc top100.sorted.cuffdiff.out
+  226  sort cuffdiff.txt | cut -f 1 | uniq | head -n 100 > differentially.expressed.genes.txt
+  227  column -t differentially.expressed.genes.txt | less -S
+  228  column -t differentially.expressed.genes.txt | less
+  229  sort -k 10 -g -r cuffdiff.txt | cut -f 1 | uniq | head -n 100 > differentially.expressed.genes.txt
+  230  man column
+  231  column -t differentially.expressed.genes.txt | less -S
+  238  cd Python2017_problemsets/
+  239  ls
+  240  history >history/unixBasics.history_2.txt

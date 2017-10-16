@@ -1,0 +1,20 @@
+    1  ls
+    2  cd Python2017_problemsets/
+    3  ls
+    4  cd pfb2017/
+    5  ls
+    6  cd files
+    7  s
+    8  ls
+    9  cp sequences.nt.fa /Users/admin/problemsets
+   10  ls
+   11  cp cuffdiff.txt /Users/admin/problemsets
+   12  ls
+   13  pwd
+   14  ls
+   15  cd ../..
+   16  ls
+   17  nano Unix_02_problemset
+   18  pwd
+   19  ls
+   20  history > history/unixBasics.history_3.txt

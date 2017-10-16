@@ -1,0 +1,110 @@
+    6  git config --global --edit
+    7  git commit --amend --reset-author
+    8  git remote add origin https://github.com/sabrsyed/Python2017_problemsets.git
+   11  git status
+   13  ls -a
+   14  mkdir Python2017_problemsets
+   15  mv Readme.md Python2017_problemsets
+   16  ls
+   17  ls Python2017_problemsets/
+   18  cd Python2017_problemsets/
+   19  git init
+   20  git add Readme.md
+   21  git status
+   25  git push -u origin master
+   31  ls -a
+   32  rm .git
+   35  pwd
+   37  mv .git Python2017_problemsets/
+   38  cd Python2017_problemsets/
+   39  ls -a
+   41  rm .git
+   42  rm -f .git 
+   43  rm -rf .git
+   47  git push -u origin master
+   48  ls
+   49  rm readme.md
+   53  cd Python2017_problemsets/
+   59  pwd
+   60  echo "#Python2017_problemsets" >> README.md
+   61  git init
+   62  git add README.md
+   63  git commit -m "commit_1"
+   64  git remote add origin https://github.com/sabrsyed/Python2017_problemsets.git
+   65  git push -u origin master
+   72  cd Python2017_problemsets/
+   75  nano git_exercises.txt
+   76  git commit -m 'added a line of text'
+   77  git push origin master
+   78  pwd
+   79  git add git_exercises.txt
+   80  git commit -m 'added a line of text'
+   81  git push origin master
+   84  ls -a
+   85  git clone https://github.com/srobb1/pfb2017.git
+   87  cd pfb2017
+   93  cd pfb2017
+   94  ls
+   95  cd problemsets
+   96  ls
+   97  nano Python_01_problemset.md 
+  100  cd pdfs
+  104  cd problemsets
+  105  ls
+  106  nano Unix_01_problemset.md 
+  107  cd ..
+  108  ls
+  109  cd ..
+  110  ls
+  111  Unix_01_problemset
+  112  nano Unix_01_problemset
+  113  ls
+  114  git commit Unix_01_problemset -m 'solutions for unix problem set 1'
+  115  git add Unix_01_problemset 
+  116  git commit Unix_01_problemset -m 'solutions for unix problem set 1'
+  117  git push origin master
+  118  ls
+  119  mkdir files
+  120  ls
+  121  pwd
+  122  mv /Users/admin/problemsets/cancer_genes.fasta /Users/admin/Python2017_problemsets
+  123  ls
+  124  md cancer_genes.fasta /Users/admin/Python2017_problemsets/files
+  125  mv cancer_genes.fasta /Users/admin/Python2017_problemsets/files
+  126  ls
+  127  pwd
+  128  ls
+  129  git add files/cancer_genes.fasta
+  130  git commit -m 'adding cancer_genes.fasta'
+  131  git push
+  132  ls
+  133  nano files/mysequences.txt
+  134  ls
+  135  ls files/
+  136  git add files/mysequences.txt
+  137  git commit -m 'made my own fasta file' 
+  138  git push origin master
+  139  ls
+  140  mkdir fastas
+  141  ls
+  142  cp files/cancer_genes.fasta fastas/
+  143  ls
+  144  ls fastas/
+  145  ls files
+  146  rm files/cancer_genes.fasta
+  147  ls
+  148  ls files
+  149  ls fastas/
+  150  git add files
+  151  git commit -m 'deleted cancer_genes.fasta copy'
+  152  git push origin master
+  153  git add fastas
+  154  git commit -m 'copied cancer_genes.fasta to fastas folder'
+  155  git push origin master
+  156  man rm
+  157  man cp
+  158  man rm 
+  159  man history
+  160  ls
+  161  mkdir history
+  162  history > unixBasics.history_1.txt
