@@ -1,0 +1,106 @@
+10/16/17
+
+Problem Set
+
+1. login
+
+2. What is the full path to your home directory?
+
+/Users/admin
+
+3. Go up one directory
+
+How many files does it contain? 0
+How many directories?  2 (shared and admin)
+
+4. mkdir problemsets
+
+5. cd problemsets
+
+6.  Use curl to copy sequences.nt.fa from the web into your problemsets directory.
+
+pfb14:problemsets admin$ pwd
+/Users/admin/problemsets
+
+curl https://raw.githubusercontent.com/srobb1/pfb2017/master/files/sequences.nt.fa > sequences.nt.fa
+
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10267  100 10267    0     0  10267      0  0:00:01 --:--:--  0:00:01  213k
+
+pfb14:problemsets admin$ ls
+sequences.nt.fa
+
+7.  How many lines does this file contain?
+
+pfb14:problemsets admin$ wc sequences.nt.fa
+     148     166   10267 sequences.nt.fa
+
+lines =148
+
+characters = 10267
+
+first line of file
+
+pfb14:problemsets admin$ head sequences.nt.fa 
+>NM_001126114.2 Homo sapiens tumor protein p53 (TP53), transcript variant 3, mRNA
+GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTC
+TAGAGCCACCGTCCAGGGAGCAGGTAGCTGCTGGGCTCCGGGGACACTTTGCGTTCGGGCTGGGAGCGTG
+CTTTCCACGACGGTGACACGCTTCCCTGGATTGGCAGCCAGACTGCCTTCCGGGTCACTGCCATGGAGGA
+GCCGCAGTCAGATCCTAGCGTCGAGCCCCCTCTGAGTCAGGAAACATTTTCAGACCTATGGAAACTACTT
+CCTGAAAACAACGTTCTGTCCCCCTTGCCGTCCCAAGCAATGGATGATTTGATGCTGTCCCCGGACGATA
+TTGAACAATGGTTCACTGAAGACCCAGGTCCAGATGAAGCTCCCAGAATGCCAGAGGCTGCTCCCCCCGT
+GGCCCCTGCACCAGCAGCTCCTACACCGGCGGCCCCTGCACCAGCCCCCTCCTGGCCCCTGTCATCTTCT
+GTCCCTTCCCAGAAAACCTACCAGGGCAGCTACGGTTTCCGTCTGGGCTTCTTGCATTCTGGGACAGCCA
+AGTCTGTGACTTGCACGTACTCCCCTGCCCTCAACAAGATGTTTTGCCAACTGGCCAAGACCTGCCCTGT
+
+last 3 lines
+
+TTTATAGCTGTTGGAAGGACTAGGTCTTCCCTAGCCCCCCCAGTGTGCAAGGGCAGTGAAGACTTGATTG
+TACAAAATACGTTTTGTAAATGTTGTGCTGTTAACACTGCAAATAAACTTGGTAGCAAACACTTCCAAAA
+AAAAAAAAAAAAAA
+
+
+How many sequences are in the file? (Hint: use grep)
+
+DO NOT do grep > sequences.nt.fa (this will redirect nothing into your sequences file)
+
+pfb14:problemsets admin$ grep ">" sequences.nt.fa 
+>NM_001126114.2 Homo sapiens tumor protein p53 (TP53), transcript variant 3, mRNA
+>NM_007294.3 Homo sapiens BRCA1, DNA repair associated (BRCA1), transcript variant 1, mRNA
+ 
+2
+
+8. Rename sequences.nt.fa to cancer_genes.fasta
+
+mv sequences.nt.fa cancer_genes.fasta
+
+9.  
+
+pfb14:files admin$ pwd
+/Users/admin/Python2017_problemsets/pfb2017/files
+
+cd /Users/admin/Python2017_problemsets/pfb2017/files
+
+cp cuffdiff.txt /Users/admin/problemsets
+
+10.  
+
+pfb14:problemsets admin$ head cuffdiff.txt
+AC148152.3_FG006	AC148152.3_FG006	AC148152.3_FG006	Chr2:231237971-231241387	B73.s	Mo17.s	NOTEST	0.0125804	0	-1.79769e+308	-1.79769e+308	0.32736	1	no
+AC148152.3_FG008	AC148152.3_FG008	AC148152.3_FG008	Chr2:231209190-231213723	B73.s	Mo17.s	OK	5.83386	0.0236324	-5.50882	4.61461	3.93829e-06	0.000124139yes
+AC148167.6_FG001	AC148167.6_FG001	AC148167.6_FG001	Chr7:11663430-11671232	B73.s	Mo17.s	OK	14.539	14.2519	-0.0199491	0.023067	0.981597	1.04126	no
+AC149475.2_FG003	AC149475.2_FG003	AC149475.2_FG003	Chr9:152490485-152495067	B73.s	Mo17.s	OK	81.7656	50.8097	-0.475769	0.47825	0.632472	0.880662	no
+AC149810.2_FG008	AC149810.2_FG008	AC149810.2_FG008	Chr9:151631158-151633751	B73.s	Mo17.s	OK	0.483528	15.9389	3.49541	-3.43503	0.000592497	0.00851925	yes
+
+
+pfb14:problemsets admin$ sort -k 10 -g -r cuffdiff.txt > sorted.cuffdiff.out
+
+pfb14:problemsets admin$ head -n 100 sorted.cuffdiff.out > top100.sorted.cuffdiff.out
+pfb14:problemsets admin$ wc top100.sorted.cuffdiff.out 
+     100    1400   14220 top100.sorted.cuffdiff.out
+
+pfb14:problemsets admin$ sort -k 10 -g -r cuffdiff.txt | cut -f 1 | uniq | head -n 100 > differentially.expressed.genes.txt
+
+
+
