@@ -1,0 +1,108 @@
+Unix_02 tutorial
+
+1.  did as indicated on handout
+
+2 and 3.  make problem set solutions in the local repositoyry &  Move problem set answers to the git repository
+
+pfb14:Python2017_problemsets admin$ nano Unix_01_problemset
+pfb14:Python2017_problemsets admin$ git add Unix_01_problemset 
+pfb14:Python2017_problemsets admin$ git commit Unix_01_problemset -m 'solutions for unix problem set 1'
+[master 9eba8d7] solutions for unix problem set 1
+ 1 file changed, 106 insertions(+)
+ create mode 100644 Unix_01_problemset
+
+pfb14:Python2017_problemsets admin$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.81 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/sabrsyed/Python2017_problemsets.git
+   daba901..9eba8d7  master -> master
+
+4.  
+
+5. pfb14:Python2017_problemsets admin$ mkdir files
+
+6.  pfb14:Python2017_problemsets admin$ mv /Users/admin/problemsets/cancer_genes.fasta /Users/admin/Python2017_problemsets/files
+
+7.  
+pfb14:Python2017_problemsets admin$ git add files/cancer_genes.fasta
+pfb14:Python2017_problemsets admin$ git commit -m 'adding cancer_genes.fasta'
+[master 8e40322] adding cancer_genes.fasta
+ 1 file changed, 148 insertions(+)
+ create mode 100644 files/cancer_genes.fasta
+pfb14:Python2017_problemsets admin$ git push origin master
+
+8.  pfb14:Python2017_problemsets admin$ nano files/mysequences.txt
+
+9. 
+pfb14:Python2017_problemsets admin$ git add files/mysequences.txt
+pfb14:Python2017_problemsets admin$ git commit -m 'made my own fasta file'
+pfb14:Python2017_problemsets admin$ git push origin master
+
+10.  pfb14:Python2017_problemsets admin$ mkdir fastas
+
+11.  pfb14:Python2017_problemsets admin$ cp files/cancer_genes.fasta fastas/
+
+12.  
+
+pfb14:Python2017_problemsets admin$ ls fastas/
+cancer_genes.fasta
+
+13.  
+
+pfb14:Python2017_problemsets admin$ rm files/cancer_genes.fasta
+
+14.  
+
+pfb14:Python2017_problemsets admin$ git add files
+pfb14:Python2017_problemsets admin$ git commit -m 'deleted cancer_genes.fasta copy'
+[master 6fb8069] deleted cancer_genes.fasta copy
+ 1 file changed, 148 deletions(-)
+ delete mode 100644 files/cancer_genes.fasta
+pfb14:Python2017_problemsets admin$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sabrsyed/Python2017_problemsets.git
+   8f308dc..6fb8069  master -> master
+
+pfb14:Python2017_problemsets admin$ git add fastas
+pfb14:Python2017_problemsets admin$ git commit -m 'copied cancer_genes.fasta to fastas folder'
+[master 1966efe] copied cancer_genes.fasta to fastas folder
+ 1 file changed, 148 insertions(+)
+ create mode 100644 fastas/cancer_genes.fasta
+pfb14:Python2017_problemsets admin$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 3.69 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sabrsyed/Python2017_problemsets.git
+   6fb8069..1966efe  master -> master
+
+15.  man rm (rm -rf needed to remove a directory and all its contents without extra prompts)
+     man cp (cp should move the entire direction including its contents)
+
+16. create histories for 3 different terminal sessions
+
+pfb14:Python2017_problemsets admin$ history > history/unixBasics.history_1.txt
+pfb14:Python2017_problemsets admin$ history > history/unixBasics.history_2.txt
+pfb14:Python2017_problemsets admin$ history > history/unixBasics.history_3.txt
+
+17.  used nano and ^K to cut text in history that was repetitive
+
+18.  
+
+pfb14:Python2017_problemsets admin$ git add hiostry
+pfb14:Python2017_problemsets admin$ git commit -m 'saved history of 3 terminal sessions'
+pfb14:Python2017_problemsets admin$ git push origin master
+
+
+
+
