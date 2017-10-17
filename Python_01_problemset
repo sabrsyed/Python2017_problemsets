@@ -1,0 +1,235 @@
+10_17_2017
+
+Python_01_problemset 
+
+1.  Start up the Python Interactive Interpreter. Print out "Hello New York"
+
+pfb14:~ admin$ python3
+
+Python 3.6.2 |Anaconda, Inc.| (default, Sep 21 2017, 18:29:43) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>>print("Hello New York")
+
+2.  Store your name in a variable and print the contents of this variable.
+
+>>> variable1=sabriya
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sabriya' is not defined
+>>> variable1 = "sabriya"
+
+>>> print(variable1)
+sabriya
+
+#variable1 points to a string (= sabriya)
+
+
+
+
+
+3.  Use nano to write a script. Make sure to include # !/usr/bin/env python3 at the top!!
+The script should print out, your name, favorite color, favorite activity, and your favorite animal.
+Make it executable using chmod (only have to do this one time per script).
+Run it from the command line.
+
+pfb14:Python2017_problemsets admin$ nano myscript_1.py
+
+in nano
+
+#!/usr/bin/env python3
+
+print("sabriya") #name
+print("green") #favorite color
+print("eating") #favorite activity
+print("cat") #favorite animal
+
+
+
+pfb14:Python2017_problemsets admin$ ls -l myscript_1.py 
+-rw-r--r--  1 admin  staff  144 Oct 17 11:14 myscript_1.py
+pfb14:Python2017_problemsets admin$ chmod +x myscript_1.py
+pfb14:Python2017_problemsets admin$ ls -l myscript_1.py 
+-rwxr-xr-x  1 admin  staff  144 Oct 17 11:14 myscript_1.py
+
+pfb14:Python2017_problemsets admin$ python3 myscript_1.py
+sabriya
+green
+eating
+cat
+
+pfb14:Python2017_problemsets admin$ ./myscript_1.py 
+sabriya
+green
+eating
+cat
+
+
+
+4. Use sys.argv (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line.
+
+pfb14:Python2017_problemsets admin$ nano myscript_2.py
+
+
+#!/usr/bin/env python3
+import sys
+
+a= sys.argv[str(sabriya)] #name
+b= sys.argv[str(green)] #favorite color
+c= sys.argv[str(eating)] #favorite activity
+d= sys.argv[str(cats)] #favorite animal
+
+print(a,b,c,d) #print a,b,c,d strings
+
+pfb14:Python2017_problemsets admin$ python3 myscript_2.py 
+Traceback (most recent call last):
+  File "myscript_2.py", line 4, in <module>
+    a= sys.argv[str(sabriya)] #name
+NameError: name 'sabriya' is not defined
+
+pfb14:Python2017_problemsets admin$ nano myscript_2.py 
+ 
+#!/usr/bin/env python3
+import sys
+
+a= str(sys.argv[sabriya]) #name
+b= str(sys.argv[green]) #favorite color
+c= str(sys.argv[eating]) #favorite activity
+d= str(sys.argv[cats]) #favorite animal
+
+print(a,b,c,d) #print a,b,c,d strings
+
+pfb14:Python2017_problemsets admin$ python3 myscript_2.py 
+Traceback (most recent call last):
+  File "myscript_2.py", line 4, in <module>
+    a= str(sys.argv[sabriya]) #name
+NameError: name 'sabriya' is not defined
+
+pfb14:Python2017_problemsets admin$ nano myscript_2.py 
+
+#!/usr/bin/env python3
+import sys
+
+a= str(sys.argv["sabriya"]) #name
+b= str(sys.argv["green"]) #favorite color
+c= str(sys.argv["eating"]) #favorite activity
+d= str(sys.argv["cats"]) #favorite animal
+
+print(a,b,c,d) #print a,b,c,d strings
+
+pfb14:Python2017_problemsets admin$ python3 myscript_2.py 
+Traceback (most recent call last):
+  File "myscript_2.py", line 4, in <module>
+    a= str(sys.argv["sabriya"]) #name
+TypeError: list indices must be integers or slices, not str
+
+
+
+pfb14:Python2017_problemsets admin$ nano myscript_2.py 
+
+#!/usr/bin/env python3
+import sys
+
+a= sys.argv["sabriya"] #name
+b= sys.argv["green"] #favorite color
+c= sys.argv["eating"] #favorite activity
+d= sys.argv["cats"] #favorite animal
+
+print(a,b,c,d) #print a,b,c,d strings
+
+
+pfb14:Python2017_problemsets admin$ python3 myscript_2.py 
+Traceback (most recent call last):
+  File "myscript_2.py", line 4, in <module>
+    a= sys.argv["sabriya"] #name
+TypeError: list indices must be integers or slices, not str
+
+#!/usr/bin/env python3
+import sys
+
+a= sys.argv["sabriya"] #name
+b= sys.argv["green"] #favorite color
+c= sys.argv["eating"] #favorite activity
+d= sys.argv["cats"] #favorite animal
+
+print(a) 
+print(b) 
+print(c) 
+print(d) 
+
+ #print a,b,c,d strings
+
+
+
+
+#!/usr/bin/env python3
+import sys
+
+a= sys.argv[1] #name
+b= sys.argv[2] #favorite color
+c= sys.argv[3] #favorite activity
+d= sys.argv[4] #favorite animal
+
+print(a b c d)
+
+ #print a,b,c,d inputed
+
+pfb14:Python2017_problemsets admin$ nano myscript_2.py 
+
+#!/usr/bin/env python3
+import sys
+
+a= sys.argv[1] #name
+b= sys.argv[2] #favorite color
+c= sys.argv[3] #favorite activity
+d= sys.argv[4] #favorite animal
+
+print(a)
+print(b)
+print(c)
+print(d)
+
+
+ #print a,b,c,d inputed
+
+pfb14:Python2017_problemsets admin$ python3 myscript_2.py sabriya green eating cats
+sabriya
+green
+eating
+cats
+
+pfb14:Python2017_problemsets admin$ nano myscript_2.py 
+
+#!/usr/bin/env python3
+import sys
+
+a= sys.argv[1] #name
+b= sys.argv[2] #favorite color
+c= sys.argv[3] #favorite activity
+d= sys.argv[4] #favorite animal
+
+print(a, b, c, d)
+
+ #print a,b,c,d inputed
+
+pfb14:Python2017_problemsets admin$ python3 myscript_2.py sabriya green eating cats
+sabriya green eating cats
+
+pfb14:Python2017_problemsets admin$ git add files/myscript_1.py
+pfb14:Python2017_problemsets admin$ git commit -m "Python_01 script1)
+> "
+[master 8d26e6c] Python_01 script1)
+ 1 file changed, 7 insertions(+)
+ create mode 100755 files/myscript_1.py
+pfb14:Python2017_problemsets admin$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 447 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sabrsyed/Python2017_problemsets.git  
+ 5c89ab1..8d26e6c  master -> master
+
+did the same for myscript_2 and the answer key
