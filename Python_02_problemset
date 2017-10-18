@@ -1,0 +1,512 @@
+Python_02 problemset
+
+1. 
+
+>>> 'ATG' in 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
+False
+
+2.  >>> 'TTT' in 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
+True
+
+
+3. dna = 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
+
+>>> dna = 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
+>>> 'ATG' in dna
+False 
+
+>>> 'TTT' in dna
+True
+
+4.   In the interpretor use bool to test a variety of values like '', 0, 0.0, FALSE, false, True, true, 'True', 'False' to see if they evalue to True or False
+
+'', 0, 0.0, FALSE, false, True, true, 'True', 'False'
+
+>>> '0'
+'0'
+>>> bool('')
+False
+>>> bool(0)
+False
+>>> bool('0')
+True
+>>> bool(FALSE)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'FALSE' is not defined
+>>> bool(false)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'false' is not defined
+>>> bool('FALSE')
+True
+>>> bool('false')
+True
+>>> bool('True')
+True
+>>> bool('true')
+True
+>>> bool (True)
+True
+>>> bool (true)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'true' is not defined
+>>> bool(false)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'false' is not defined
+>>> bool(False)
+False
+
+
+5. Using a text editor, write a script that
+
+Assigns a value to a variable
+Has a if/else statment in which:
+It prints out a confirmation of truth if the value is true
+It prints out "Not True" if the value is not true.
+
+
+pfb14:files admin$ nano myscript_3.py
+
+#!/usr/bin/env python3
+
+#assign a value to a variable
+
+variable1=23
+
+if variable1 % 2 == 0:
+        message = "is even"
+        print(variable1, message)
+
+if variable1 % 2 != 0:
+        message = "is odd"
+        print (variable1, message)
+
+elif variable1 > 21:
+        message = "is very big"
+        print (variable1, message)
+
+elif variable1 < 21:
+        message = "is puny"
+        print(variable1, message)
+
+else:
+        message = "is the same!"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_3.py 
+23 is odd
+
+
+
+*didn't proceed further because it matched with the first if statement. 
+
+
+pfb14:files admin$ nano myscript_3.py
+
+#!/usr/bin/env python3
+
+#assign a value to a variable
+
+variable1=23
+
+if variable1 % 2 == 0:
+        message = "is even"
+        print(variable1, message)
+
+elif variable1 > 21:
+        message = "is very big"
+        print (variable1, message)
+
+elif variable1 < 21:
+        message = "is puny"
+        print(variable1, message)
+
+else:
+        message = "is the same!"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_3.py 
+23 is very big
+
+
+
+
+7. Write a new script that does the same as the last question, but gets the value from the command line.
+
+
+
+pfb14:files admin$ nano myscript_4.py
+
+
+
+#!/usr/bin/env python3
+import sys
+
+#Assigns a value to a variable and include an if/else statement
+
+if a = float(sys.argv[1]) % 2 == 0:
+        message = "is even"
+        print(sys.argv[1], message)
+
+elif a = float(sys.argv[1]) > 21:
+        message = "is very big"
+        print (sys.argv[1], message)
+
+elif a = float(sys.argv[1]) < 21:
+        message = "is puny"
+        print(sys.argv[1], message)
+
+else:
+        message = "is the same!"
+        print(sys.argv[1], message)
+
+
+pfb14:files admin$ python3 myscript_4.py 22
+  File "myscript_4.py", line 6
+    if a = float(sys.argv[1]) % 2 == 0:
+         ^
+SyntaxError: invalid syntax
+
+
+
+pfb14:files admin$ nano myscript_4.py
+
+
+#!/usr/bin/env python3
+import sys
+
+#Assigns a value to a variable and include an if/else statement
+
+variable1 = sys.argv[1]
+
+if a = variable1 % 2 == 0:
+        message = "is even"
+        print(variable1, message)
+
+elif a = variable1 > 21:
+        message = "is very big"
+        print (variable1, message)
+
+elif a = variable1 < 21:
+        message = "is puny"
+        print(variable1, message)
+
+else:
+        message = "is the same!"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_4.py 23
+  File "myscript_4.py", line 8
+    if a = variable1 % 2 == 0:
+         ^
+SyntaxError: invalid syntax
+
+pfb14:files admin$ nano myscript_4.py
+
+!/usr/bin/env python3
+import sys
+
+#Assigns a value to a variable and include an if/else statement
+
+variable1 = sys.argv[1]
+
+if variable1 % 2 == 0:
+        message = "is even"
+        print(variable1, message)
+
+elif variable1 > 21:
+        message = "is very big"
+        print (variable1, message)
+
+elif variable1 < 21:
+        message = "is puny"
+        print(variable1, message)
+
+else:
+        message = "is the same!"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_4.py 23
+Traceback (most recent call last):
+  File "myscript_4.py", line 8, in <module>
+    if variable1 % 2 == 0:
+TypeError: not all arguments converted during string formatting
+
+
+
+pfb14:files admin$ nano myscript_4.py
+
+#!/usr/bin/env python3
+import sys
+
+#Assigns a value to a variable and include an if/else statement
+
+variable1 = float(sys.argv[1])
+
+if variable1 % 2 == 0:
+        message = "is even"
+        print(variable1, message)
+
+elif variable1 > 21:
+        message = "is very big"
+        print (variable1, message)
+
+elif variable1 < 21:
+        message = "is puny"
+        print(variable1, message)
+
+else:
+        message = "is the same!"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_4.py 23
+23.0 is very big
+pfb14:files admin$ python3 myscript_4.py 23
+23.0 is very big
+pfb14:files admin$ python3 myscript_4.py 21
+21.0 is the same!
+pfb14:files admin$ python3 myscript_4.py 20
+20.0 is even
+pfb14:files admin$ python3 myscript_4.py 19
+19.0 is puny
+
+8.  Create a script that has a if/elif/else statement that
+
+Tests to see if a number is positive or negative
+if it is positive, is it bigger or smaller than 50
+if it is smaller, is it an even number
+if it is larger, is it divisible by 3.
+
+
+pfb14:files admin$ nano myscript_5.py
+pfb14:files admin$ python3 myscript_5.py 54
+  File "myscript_5.py", line 11
+    elif variable1 > 50 and % 3 ==0:
+                            ^
+SyntaxError: invalid syntax
+
+
+
+pfb14:files admin$ nano myscript_5.py
+
+#!/usr/bin/env python3
+
+#assign a value to a variable
+
+
+variable1 = float(sys.argv[1])
+
+if variable1 < 0:
+        message = "is negative"
+        print(variable1, message)
+
+elif variable1 > 50 and variable1 % 3 ==0:
+        message = "is positive, is greater than 50, and divisible by 3"
+        print (variable1, message)
+
+else:
+        message = "is something else"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_5.py 54
+Traceback (most recent call last):
+  File "myscript_5.py", line 5, in <module>
+    variable1 = float(sys.argv[1])
+NameError: name 'sys' is not defined
+
+
+
+pfb14:files admin$ nano myscript_5.py
+
+#!/usr/bin/env python3
+import sys
+
+#stuff
+
+variable1 = float(sys.argv[1])
+
+if variable1 < 0:
+        message = "is negative"
+        print(variable1, message)
+
+elif variable1 > 50 and variable1 % 3 ==0:
+        message = "is positive, is greater than 50, and divisible by 3"
+        print (variable1, message)
+
+else:
+        message = "is something else"
+        print(variable1, message)
+
+
+pfb14:files admin$ python3 myscript_5.py 54
+54.0 is positive, is greater than 50, and divisible by 3
+
+pfb14:files admin$ nano myscript_5.py
+
+#!/usr/bin/env python3
+import sys
+
+#stuff
+
+variable1 = float(sys.argv[1])
+
+if variable1 < 0:
+        message = "is negative"
+        print(variable1, message)
+
+elif variable1 > 50 and variable1 % 3 ==0:
+        message = "is positive, is greater than 50, and divisible by 3"
+        print (variable1, message)
+
+elif variable1 < 50 and variable1 % 2 ==0:
+        message = "is positive, is less than 50, and is an even number"
+        print (variable1, message)
+
+else:
+        message = "is something else"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_5.py 54
+54.0 is positive, is greater than 50, and divisible by 3
+pfb14:files admin$ python3 myscript_5.py 22
+22.0 is positive, is less than 50, and is an even number
+pfb14:files admin$ python3 myscript_5.py 21
+21.0 is something else
+
+pfb14:files admin$ nano myscript_5.py
+
+#!/usr/bin/env python3
+import sys
+
+#stuff
+
+variable1 = float(sys.argv[1])
+
+if variable1 < 0:
+        message = "is negative"
+        print(variable1, message)
+
+elif variable1 > 50 and variable1 % 3 ==0:
+        message = "is positive, is greater than 50, and divisible by 3"
+        print (variable1, message)
+
+elif variable1 < 50 and variable1 % 2 ==0:
+        message = "is positive, is smaller than 50, and is an even number"
+        print (variable1, message)
+
+else:
+        message = "is positive"
+        print(variable1, message)
+
+pfb14:files admin$ python3 myscript_5.py -4
+-4.0 is negative
+pfb14:files admin$ python3 myscript_5.py 19
+19.0 is positive
+pfb14:files admin$ python3 myscript_5.py 55
+55.0 is positive
+
+
+
+
+pfb14:files admin$ nano myscript_5.py
+
+#!/usr/bin/env python3
+import sys
+
+#stuff
+
+variable1 = float(sys.argv[1])
+
+if variable1 < 0:
+        message = "is negative"
+        print(variable1, message)
+
+elif variable1 > 50 and variable1 % 3 ==0:
+        message = "is positive, is greater than 50, and divisible by 3"
+        print (variable1, message)
+
+elif variable1 < 50 and variable1 % 2 ==0:
+        message = "is positive, is smaller than 50, and is an even number"
+        print (variable1, message)
+
+elif variable1 < 50 and variable1 % 2 !=0:
+        message = "is positive, is smaller than 50"
+        print (variable1, message)
+
+elif variable1 > 50 and variable1 % 3 !=0:
+        message = "is positive, is greater than 50"
+        print (variable1, message)
+
+else:
+        message = "is 0"
+        print(variable1, message)
+
+
+pfb14:files admin$ python3 myscript_5.py 0
+0.0 is positive, is smaller than 50, and is an even number
+
+
+pfb14:files admin$ nano myscript_5.py
+
+
+#!/usr/bin/env python3
+import sys
+
+#stuff
+
+variable1 = float(sys.argv[1])
+
+if variable1 ==0:
+        message = "is 0"
+        print (variable1, message)
+
+elif variable1 < 0:
+        message = "is negative"
+        print(variable1, message)
+
+elif variable1 > 50 and variable1 % 3 ==0:
+        message = "is positive, is greater than 50, and divisible by 3"
+        print (variable1, message)
+
+elif variable1 < 50 and variable1 % 2 ==0:
+        message = "is positive, is smaller than 50, and is an even number"
+        print (variable1, message)
+
+elif variable1 < 50 and variable1 % 2 !=0:
+        message = "is positive, is smaller than 50"
+        print (variable1, message)
+
+elif variable1 > 50 and variable1 % 3 !=0:
+        message = "is positive, is greater than 50"
+        print (variable1, message)
+
+elif variable1 ==0:
+        message = "is 0"
+        print (variable1, message)
+
+else:
+        message = "is crap"
+        print(variable1, message)
+
+
+pfb14:files admin$ python3 myscript_5.py 0
+0.0 is 0
+pfb14:files admin$ python3 myscript_5.py 54
+54.0 is positive, is greater than 50, and divisible by 3
+pfb14:files admin$ python3 myscript_5.py 59
+59.0 is positive, is greater than 50
+pfb14:files admin$ python3 myscript_5.py -2
+-2.0 is negative
+pfb14:files admin$ python3 myscript_5.py 68
+68.0 is positive, is greater than 50
+pfb14:files admin$ python3 myscript_5.py 72
+72.0 is positive, is greater than 50, and divisible by 3
+pfb14:files admin$ python3 myscript_5.py 32
+32.0 is positive, is smaller than 50, and is an even number
+pfb14:files admin$ python3 myscript_5.py 31
+31.0 is positive, is smaller than 50
+pfb14:files admin$ python3 myscript_5.py 33
+33.0 is positive, is smaller than 50
