@@ -14,4 +14,6 @@ for dna in fasta_read:
 fasta_read.close()
 fasta_write.close()
 
+#fasta revese complement line-by-line (not CORRECT)
+
 
