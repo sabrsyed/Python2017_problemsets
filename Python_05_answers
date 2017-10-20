@@ -1,0 +1,156 @@
+1. 
+
+Write a script to do the following to Python_05.txt
+
+Open and read the contents.
+Uppercase each line
+Print each line to the STDOUT
+
+
+#!/usr/bin/env python3
+#Python_05 question 1
+
+file = open("../python_05.txt", "r")
+contents = file.read()
+print (contents)
+
+song_upper = contents.upper()
+print (song_upper)
+
+file.close()
+
+2.  
+
+Modifiy the script in the previous problem to write the contents to a new file called "Python_05_uc.txt"
+
+#!/usr/bin/env python3
+#Python_05 question 2
+
+file = open("../python_05.txt", "r")
+file_write = open ("../Python_05_uc.txt", "w")
+
+contents = file.read()
+print (contents)
+
+song_upper = contents.upper()
+print (song_upper)
+
+file_write.write(song_upper)
+
+file.close()
+file_write.close()
+
+
+3.  Open and print the reverse complement of each sequence in Python_05.fasta. 
+Make sure to print the output in fasta format including the sequence name and a note in the description that this is the reverse complement. 
+Print to STDOUT and capture the output into a file with a command line redirect '>'.
+
+wget --no-check-certificate https://raw.githubusercontent.com/srobb1/pfb2017/master/files/Python_05.fasta 
+
+(check text file for full notes)
+
+#!/usr/bin/env python3
+#Python_05 question 3
+
+
+fasta_read = open ("../Python_05.fasta", "r")
+fasta_write = open ("../Python_05comb.fasta", "w")
+
+combined = ""
+
+for dna in fasta_read:
+        dna = dna.rstrip()
+
+        if dna.startswith('>'):
+                if combined:
+                        fasta_write.write(combined + "\n")
+                combined = ""
+                fasta_write.write(dna + "\n")
+
+        else:
+                combined += dna
+
+fasta_write.write(combined + "\n")
+
+fasta_read.close()
+fasta_write.close()
+
+
+ #dna = dna.rstrip()
+
+#dna_reverse= dna.replace('T', 'a').replace('A', 't').replace('G', 'c').replace('C', 'g')
+
+                #dna_reverse = dna_reverse.rstrip()
+
+        #fasta_write.write(dna_reverse[::-1])
+
+#print ("../Python_05_rc.fasta")
+
+
+4.  
+
+Open the FASTQ file Python_05.fastq and go through each line of the file. Count the number of lines and the number of characters per line. Have your program report the:
+
+total number of lines
+total number of characters
+average line length
+
+#!/usr/bin/env python3
+#Python_05 question 4
+
+linecount = 0
+chrcount = 0
+
+fastq = open ("../Python_05.fastq", "r")
+
+for line in fastq:
+
+        linecount+= 1
+        chrcount += len(line)
+
+print ("linecount:", linecount)
+print ("chrcount:", chrcount )
+print ("avglinelength:", (chrcount/linecount) )
+
+pfb14:files admin$ python3 myscript_19.py
+linecount: 120
+chrcount: 7920
+avglinelength: 66.0
+
+***** FORGOT that \n is a character
+
+#!/usr/bin/env python3
+#Python_05 question 4
+
+linecount = 0
+chrcount = 0
+
+fastq = open ("../Python_05.fastq", "r")
+
+for line in fastq:
+        line = line.rstrip("\n")
+        linecount+= 1
+        chrcount += len(line)
+
+print ("linecount:", linecount)
+print ("chrcount:", chrcount )
+print ("avglinelength:", (chrcount/linecount) )
+
+linecount: 120
+chrcount: 7800
+avglinelength: 65.0
+
+
+
+5.  Genelists from Ensembl Biomart
+
+
+
+pfb14:files admin$ python3 myscript_20.py 
+not_sc_count: 15147
+
+ENSVPAG00000000048
+ENSVPAG00000006160
+ENSVPAG00000003148
+ENSVPAG00000006812
+both_scandpigm_count: 5
