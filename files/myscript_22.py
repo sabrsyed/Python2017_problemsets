@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-#Python_06 question 1
-
+#Python_06 question 2
 
 import re
 
