@@ -2,7 +2,6 @@
 #Python_06 question 3
 #myscript_23.txt
 
-
 #Using pattern matching, find all the header lines in Python_06.fasta.
 
 import re
