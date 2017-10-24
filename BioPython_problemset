@@ -1,0 +1,70 @@
+uniprot_sprot.fasta
+
+3.
+
+What does the file contain? How many records? Does it look intact? How do you know?
+
+- File looks like a FASTA file
+
+script for this is Biopython_2.py
+
+#!/usr/bin/env python3
+
+import re
+import Bio.Seq
+from Bio import SeqIO
+
+sprotfasta = open ("../uniprot_sprot.fasta", "r")
+count = 0
+
+for record in sprotfasta:
+        count +=1
+
+print(count)
+
+pfb14:files admin$ python3 BioPython_2.py 
+4150232
+
+File contains 4150232 records!
+
+
+
+Is the file in tact? I think yes because it is recognized by SeqIO
+
+
+
+4. 
+
+Extract IDs from fasta file with the Bio.SeqIO module. generate a list of all the IDs in the fasta file. How many are there? 
+
+#!/usr/bin/env python3
+
+import re
+import Bio.Seq
+from Bio import SeqIO
+
+sprotfasta = open ("../uniprot_sprot.fasta", "r")
+count = 0   
+
+for record in SeqIO.parse(sprotfasta, "fasta"):
+        count +=1
+
+print(count)
+
+pfb14:files admin$ python3 BioPython_1.py 
+555594
+
+
+>>> for record in SeqIO.parse(sprotfasta, "fasta"):
+>>>     print(record.id)
+
+prints all the gene headers
+
+>>> sprotfasta = open ("uniprot_sprot.fasta", "r")
+>>> RecordID = []
+>>> for record in SeqIO.parse(sprotfasta, "fasta"):
+...     RecordID.append(record.id) 
+... 
+>>> print(len(RecordID))
+555594
+
