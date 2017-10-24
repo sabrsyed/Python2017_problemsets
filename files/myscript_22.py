@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #Python_06 question 1
 
+
 import re
 
 poem_read = open ("../Python_06_nobody.txt", "r")
